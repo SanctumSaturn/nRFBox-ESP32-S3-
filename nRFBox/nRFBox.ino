@@ -7,7 +7,10 @@
 #include "setting.h"
 #include "config.h"
 
-extern uint8_t oledBrightness;
+U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE, /* clock=*/ 9, /* data=*/ 8);
+Adafruit_NeoPixel pixels(1, 14, NEO_GRB + NEO_KHZ800);
+bool neoPixelActive = false;
+uint8_t oledBrightness = 100;
 
 const int NUM_ITEMS = 12;
 const int MAX_ITEM_LENGTH = 20;
