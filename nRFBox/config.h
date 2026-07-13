@@ -10,14 +10,14 @@
 #define SCREEN_HEIGHT 64
 
 // Push Buttons-specific Pins
-#define BUTTON_UP_PIN       26 
-#define BUTTON_SELECT_PIN   33
-#define BUTTON_DOWN_PIN     32 
-#define BTN_PIN_RIGHT       27
-#define BTN_PIN_LEFT        25
+#define BUTTON_UP_PIN       6
+#define BUTTON_SELECT_PIN   7
+#define BUTTON_DOWN_PIN     18
+#define BTN_PIN_RIGHT       1
+#define BTN_PIN_LEFT        40
 
 // SD Card Slot-specific Pins
-#define SD_CS_PIN 5
+#define SD_CS_PIN 10
 #define FIRMWARE_FILE "/firmware.bin"
 
 // nRF24-specific Pins
@@ -42,7 +42,7 @@
 #include <SD.h>
 #include <Update.h>
 
-U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
+U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE, /* clock=*/ 9, /* data=*/ 8);
 
 Adafruit_NeoPixel pixels(1, 14, NEO_GRB + NEO_KHZ800);
 
